@@ -5,6 +5,10 @@
 
 Add description here( 想達成的目的,哪個網站 : 沒API,不用登入) 
 
+###Files
+
+Add description ( Class file (.rb), Application file, Gemfile )
+
 ###Example Code
 
 Add example code here
