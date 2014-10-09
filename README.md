@@ -16,3 +16,8 @@ Add example code here
 ###Authors
 
 Mavis Cheng (Cheng SyunWei), Yen Wei ,Wu ChiaChun
+
+### For Authors
+
+DownLoad 
+SSH : git clone git@github.com:mavischeng/WebScraper.git
