@@ -11,19 +11,19 @@ By the way, this website dosen't provide API and need not log in.
 
 ###Files
 
-1) Class file : Scraper.rb
-2) Application file : executable.rb
-3) Gemfile : 
+1) Class file : Scraper.rb <br/>
+2) Application file : executable.rb <br/>
+3) Gemfile : <br/>
 
 ###Example Code
 
 Usage : ruby executable.rb [number]
 
-1) ruby executable.rb [number]
-2) ruby executable.rb 1
-   Save HsinZhu Bus Website structure into a file (Structure.txt)
-3) ruby executable.rb 2
-   Show HsinZhu Bus Station.
+1) ruby executable.rb [number] <br/>
+2) ruby executable.rb 1 <br/>
+   Save HsinZhu Bus Website structure into a file (Structure.txt) <br/>
+3) ruby executable.rb 2 <br/>
+   Show HsinZhu Bus Station. <br/>
 ###Authors
 
 Mavis Cheng (Cheng SyunWei), Yen Wei ,Wu ChiaChun
