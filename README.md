@@ -21,9 +21,9 @@ Usage : ruby executable.rb [number]
 
 1) ruby executable.rb [number] <br/>
 2) ruby executable.rb 1 <br/>
-   Save HsinZhu Bus Website structure into a file (Structure.txt) <br/>
+    Save HsinZhu Bus Website structure into a file (Structure.txt) <br/>
 3) ruby executable.rb 2 <br/>
-   Show HsinZhu Bus Station. <br/>
+    Show HsinZhu Bus Station. <br/>
 ###Authors
 
 Mavis Cheng (Cheng SyunWei), Yen Wei ,Wu ChiaChun
