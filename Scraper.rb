@@ -15,9 +15,15 @@ class WebScraper
   end
 
   def busstation
+    num = 1
     getwebstructure('http://www.hcbus.com.tw/big5/service.asp')
     @data.css("select[name='jumpMenu'] option").each do |x|
-      puts 'Station : ' << x.text
+      puts 'Station ' << num.to_s << ' : ' << x.text
+      num += 1
     end
+  end
+
+  def selectstation
+    busstation
   end
 end
