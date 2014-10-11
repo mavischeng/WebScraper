@@ -1,4 +1,3 @@
-#!/user/bin/env ruby
 # User Interface (takes user input from the user at the command line)
 
 require_relative 'Scraper'
@@ -15,6 +14,8 @@ case number
     scmachine.getwebstructure('http://www.hcbus.com.tw')
   when '2'
     scmachine.busstation
+  when '3'
+    scmachine.selectstation
   else
     puts 'Error : No' << number.to_s
 end
