@@ -16,6 +16,7 @@ case number
     scmachine.busstation
   when '3'
     scmachine.selectstation
+  
   else
     puts 'Error : No' << number.to_s
 end

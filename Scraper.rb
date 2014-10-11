@@ -25,16 +25,16 @@ class WebScraper
     getwebstructure('http://www.hcbus.com.tw/big5/service.asp')
     @data.css("select[name='jumpMenu'] option").each do |x|
       @station << x.text
-      puts 'Station ' << num.to_s << ' : ' << x.text
+      puts 'region ' << num.to_s << ' : ' << x.text
       num += 1
     end
   end
 
   def selectstation
     busstation
-    puts 'Please select a station (1,2,3.....)'
+    puts 'Please select a region  (Enter:1 or 2 or 3.....)'
     select_station = $stdin.gets.chomp
-    puts (select_station.to_i >= 0 && select_station.to_i <= @station.length) ? station[select_station.to_i - 1] : '[ERROR] Please select provided number above.'
+    puts (select_station.to_i >= 0 && select_station.to_i <= @station.length) ? "Region :#{station[select_station.to_i - 1]} \n\n": '[ERROR] Please select provided number above.'
     selectdropdown(select_station.to_i - 1)
   end
 
@@ -50,15 +50,25 @@ class WebScraper
   end
 
   def getinformation
-    key = [], value = []
+    key = [], value = [],key2 = []
     title = @page.parser.xpath("//table/tr[@class='text1_white']/td")
     content = @page.parser.xpath("//table/tr/td[@class='map-style']")
+    content2 = @page.parser.xpath("//table/tr/td[@class='map-style'][1]")
+    content2.each{|b|  key2 << b.text.strip}
     title.each {|t| key << t.text.strip}
     content.each {|c| value << c.text.strip}
-    makehash(key, value)
+    makehash(key, value,key2)
   end
-  def makehash(key, value)
-    key.each {|k| puts k}
-    value.each {|v| puts v}
+  def makehash(key, value,key2)
+    value.each do |v|
+             key2.each do |c|
+                 
+                  if(v==c)
+                    puts "**************************************"
+                    end
+                 end
+             puts v
+      end
+          puts"**************************************"
   end
 end
