@@ -8,10 +8,13 @@ class WebScraper
   attr_accessor :data
   attr_accessor :station
   attr_accessor :page
+  attr_accessor :output
+
   def initialize
     @data = data
     @station = station
     @page = page
+    @output=output
   end
 
   def getwebstructure(website)
@@ -19,7 +22,12 @@ class WebScraper
     @data = Nokogiri.HTML(web_data)
     File.write('Structure.txt', @data)
   end
+  def file_output
+         selectstation
+      File.write('Output.txt', @output)
+puts "\n\n\nPlease check data in Output.txt file"
 
+  end
   def busstation
     num, @station = 1, []
     getwebstructure('http://www.hcbus.com.tw/big5/service.asp')
@@ -60,15 +68,19 @@ class WebScraper
     makehash(key, value,key2)
   end
   def makehash(key, value,key2)
+@output=[]
     value.each do |v|
              key2.each do |c|
                  
                   if(v==c)
-                    puts "**************************************"
+                    #puts "**************************************"
+               puts @output << "**************************************"
                     end
                  end
-             puts v
+             #puts v
+             puts @output << v
       end
-          puts"**************************************"
+          #puts"**************************************"
+                puts    @output << "**************************************"
   end
 end
