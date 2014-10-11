@@ -7,6 +7,7 @@ fail ArgumentError, usage if ARGV.count != 1
 
 number = ARGV[0]
 
+
 scmachine = WebScraper.new
 
 #while(number)
