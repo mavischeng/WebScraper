@@ -14,7 +14,7 @@ By the way, this website dosen't provide API and need not log in.
 
 1) Class file : Scraper.rb <br/>
 2) Application file : executable.rb <br/>
-3) Gemfile : busgogo<br/>
+3) Gemfile : Gemfile<br/>
 
 ###Example Code
 
