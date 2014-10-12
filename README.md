@@ -28,7 +28,7 @@ Usage : ruby executable.rb [number]
 4) ruby executable.rb 3 <br/>
     Get bus stataion information in detail. <br/>
 5) ruby executable.rb 4 <br/>
-    Get file (bus stataion information)bus.
+    Get file (bus stataion information)bus(Output.txt).
 ###Authors
 
 Mavis Cheng (Cheng SyunWei), Yen Wei ,Wu ChiaChun
