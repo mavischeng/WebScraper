@@ -1,4 +1,4 @@
-require 'open_uri'
+require 'open-uri'
 require 'nokogiri'
 require 'rubygems'
 require 'mechanize'
@@ -9,7 +9,7 @@ class WebScraper
   attr_accessor :station
   attr_accessor :page
   attr_accessor :output
-
+url='http://www.hcbus.com.tw/big5/service.asp'
   def initialize
     @data = data
     @station = station
@@ -31,12 +31,12 @@ class WebScraper
 
   def busstation
     num, @station = 1, []
-    getwebstructure('http://www.hcbus.com.tw/big5/service.asp')
+    getwebstructure(url)
     @data.css("select[name='jumpMenu'] option").each do |x|
-      @station << x.text
-      puts 'region ' << num.to_s << ' : ' << x.text
-      num += 1
+    @station << x.text  
+#return   x.text              
     end
+  return   @station
   end
 
   def selectstation
@@ -52,7 +52,7 @@ class WebScraper
   end
 
   def selectdropdown(num)
-    url = 'http://www.hcbus.com.tw/big5/service.asp'
+    #url = 'http://www.hcbus.com.tw/big5/service.asp'
     agent = Mechanize.new
     form = agent.get(url).forms.first
     form.field_with(name: 'jumpMenu').options[num.to_i].click
