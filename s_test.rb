@@ -2,27 +2,37 @@ require 'minitest/autorun'
 require 'minitest/rg'
 require './scraper.rb'
 
-teststation = [
-'新竹地區',
-'竹東地區',
-'關西地區',
-'桃園地區',
-'苗栗地區',
-'國道班車資訊',
-'一般公路資訊',
-'新竹市區公車',
-'桃園縣市區公車資訊',
-'免費公車資訊'
-]
+teststation = {
+'1' => "新竹地區",
+'2' => "竹東地區",
+'3' => "關西地區",
+'4' => "桃園地區",
+'5' => "苗栗地區",
+'6' => "國道班車資訊",
+'7' => "一般公路資訊",
+'8' => "新竹市區公車",
+'9' => "桃園縣市區公車資訊",
+'10' => "免費公車資訊"
+}
 
 describe "station" do
 
 before do
- @found= WebScraper.busstation
+mac= WebScraper.new
+ @found= mac.busstation
+#@selet=mac.tmp_selectstation
 end
 
-it 'same' do
-@found.@station[1].must_equal Data.parse(teststation[1])
+it 'find 新竹地區' do
+@found[1].must_equal teststation['1']
+end
+
+it 'find 苗栗地區' do
+@found[5].must_equal teststation['5']
+end
+
+it 'find 桃園縣市區公車資訊' do
+@found[9].must_equal teststation['9']
 end
 end
 

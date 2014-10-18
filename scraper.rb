@@ -9,7 +9,7 @@ class WebScraper
   attr_accessor :station
   attr_accessor :page
   attr_accessor :output
-url='http://www.hcbus.com.tw/big5/service.asp'
+#url='http://www.hcbus.com.tw/big5/service.asp'
   def initialize
     @data = data
     @station = station
@@ -30,12 +30,13 @@ url='http://www.hcbus.com.tw/big5/service.asp'
   end
 
   def busstation
-    num, @station = 1, []
+  url='http://www.hcbus.com.tw/big5/service.asp'
+
+    num, @station = 1, {}
     getwebstructure(url)
     @data.css("select[name='jumpMenu'] option").each do |x|
-    @station << x.text  
-#return   x.text        
-#num+=1
+    @station[num] = x.text  
+    num+=1
     end
   return   @station
   end
@@ -51,9 +52,12 @@ url='http://www.hcbus.com.tw/big5/service.asp'
     end
     selectdropdown(select_station.to_i - 1)
   end
-
+def tmp_selectstation
+selectdropdown(1)
+selectdropdown(2)
+end
   def selectdropdown(num)
-    #url = 'http://www.hcbus.com.tw/big5/service.asp'
+    url = 'http://www.hcbus.com.tw/big5/service.asp'
     agent = Mechanize.new
     form = agent.get(url).forms.first
     form.field_with(name: 'jumpMenu').options[num.to_i].click
