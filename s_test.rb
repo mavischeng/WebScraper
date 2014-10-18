@@ -1,7 +1,7 @@
-require 'minitest'
-#require 'minitest/autorun'
-#require 'minitest/rg'
-require './executable.rb'
+#require 'minitest'
+require 'minitest/autorun'
+require 'minitest/rg'
+require './scraper.rb'
 #require_relative 'executable'
 
 teststation = {
@@ -23,9 +23,9 @@ before do
  @found= WebScraper.busstation
 end
 
-#it 'same' do
-#@found['1'].must_equal Data.parse
-#end
+it 'same' do
+@found['1'].must_equal Data.parse(teststation['1'])
+end
 end
 
 
